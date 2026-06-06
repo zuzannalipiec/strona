@@ -625,6 +625,11 @@ section li,
     width: 100%;
     min-height: 240px;
     text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.b-step:hover {
+    transform: translateY(-3px);
 }
 
 @media (max-width: 1200px) {
