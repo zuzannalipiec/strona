@@ -405,10 +405,14 @@ section li,
     box-shadow: 0 12px 30px rgba(42,50,41,0.08);
 }
 
+.faq-page {
+    padding-top: 60px;
+}
+
 .faq-list {
     display: grid;
-    gap: 16px;
-    margin-top: 40px;
+    gap: 24px;
+    margin-top: 56px;
 }
 
 .faq-item {
@@ -416,14 +420,13 @@ section li,
     border-radius: 24px;
     background-color: var(--white);
     overflow: hidden;
-    box-shadow: 0 10px 24px rgba(42,50,41,0.06);
 }
 
 .faq-question {
     width: 100%;
     background-color: var(--sage-light);
     border: none;
-    padding: 22px 26px;
+    padding: 26px 28px;
     text-align: left;
     font-size: 1rem;
     font-weight: 700;
