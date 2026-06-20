@@ -744,6 +744,18 @@ section li,
     margin: 0;
 }
 
+/* Styl dla linków Instagram w tekście */
+a[href*="instagram.com"] {
+    color: var(--sage-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+a[href*="instagram.com"]:hover {
+    color: var(--text-dark);
+}
+
 @media (max-width: 700px) {
     .footer {
         flex-direction: column;
