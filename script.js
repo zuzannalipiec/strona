@@ -86,6 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // FAQ accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.faq-item');
+            const isOpen = item.classList.toggle('open');
+            button.setAttribute('aria-expanded', String(isOpen));
+        });
+    });
+
     // If page loaded with hash, reveal that section
     if (location.hash) {
         const target = document.querySelector(location.hash);
