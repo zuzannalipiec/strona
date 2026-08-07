@@ -347,10 +347,6 @@ button, .btn-main, .btn-secondary {
     box-shadow: 0 22px 50px rgba(42, 50, 41, 0.12);
 }
 
-.about-text {
-    text-align: justify;
-}
-
 .about-text h3 {
     font-size: 1.25rem;
     color: var(--sage-green);
@@ -372,24 +368,6 @@ button, .btn-main, .btn-secondary {
     .about-img {
         min-height: 260px;
     }
-}
-
-/* Wyjustuj tekst w sekcjach (paragrafy, leady, listy, nagłówki) */
-section h2,
-section h3,
-.section-header h2,
-.section-header h3,
-section p,
-section .section-lead,
-section li,
-.hero-subtitle,
-.about-text p,
-.timeline-content p,
-.b-text p,
-.control-card p,
-.section-lead {
-    text-align: justify;
-    text-justify: inter-word;
 }
 
 .about-highlight {
@@ -745,12 +723,6 @@ section li,
     color: var(--text-muted);
 }
 
-/* Wyjustuj tekst w kafelkach z krokami */
-.b-text {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
 /* PRICING (CENNIK) */
 .pricing {
     padding: 90px 5%;
@@ -862,6 +834,9 @@ a[href*="instagram.com"]:hover {
         padding: 14px 5%;
         flex-direction: row;
         gap: 12px;
+    }
+    .logo {
+        align-items: flex-start;
     }
     .nav-links {
         display: none;
