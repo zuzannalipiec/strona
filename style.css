@@ -453,7 +453,8 @@ button, .btn-main, .btn-secondary {
 
 @media (max-width: 900px) {
     .faq-page {
-        padding: 90px 5%;
+        padding: 90px max(20px, 5vw);
+        box-sizing: border-box;
     }
 
     .faq-list {
