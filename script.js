@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const timelineItems = sec.querySelectorAll('.timeline-item');
         timelineItems.forEach(item => item.classList.add('reveal-item'));
 
+        const bookingItems = sec.querySelectorAll('.b-step');
+        bookingItems.forEach(item => item.classList.add('reveal-item'));
+
         const heroAccent = sec.querySelectorAll('.hero-text h1 .accent-text');
         heroAccent.forEach(item => item.classList.add('reveal-item'));
     });

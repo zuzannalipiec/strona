@@ -574,14 +574,14 @@ button, .btn-main, .btn-secondary {
 
 .controls-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: clamp(16px, 2.5vw, 25px);
     margin-top: 40px;
 }
 
 .control-card {
     background-color: var(--sage-light);
-    padding: 30px;
+    padding: clamp(20px, 2.5vw, 30px);
     border-radius: 16px;
     transition: transform 0.2s;
 }
@@ -638,70 +638,49 @@ button, .btn-main, .btn-secondary {
 .booking-steps {
     margin: 40px auto 0;
     width: min(100%, 1160px);
-    display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-    justify-content: center;
-    justify-items: center;
-    gap: 30px;
-    align-items: start;
-    padding-bottom: 10px;
-}
-
-.booking-steps > .b-step:nth-child(4) {
-    grid-column: 1 / -1;
-}
-
-/* Numeracja kafelków (1,2,3...) */
-.booking-steps {
+    position: relative;
+    padding: 0 0 10px 30px;
     counter-reset: booking-step;
+}
+
+.booking-steps::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    bottom: 35px;
+    width: 2px;
+    background-color: #E2E8E1;
 }
 
 .b-step::before {
     counter-increment: booking-step;
     content: counter(booking-step);
     display: inline-flex;
-    width: 38px;
-    height: 38px;
+    width: 20px;
+    height: 20px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background: var(--sage-green);
     color: var(--white);
     font-weight: 700;
-    margin-bottom: 12px;
-    font-size: 1rem;
-    box-shadow: 0 6px 18px rgba(42,50,41,0.06);
-    align-self: flex-start;
+    font-size: 0.75rem;
+    position: absolute;
+    left: -30px;
+    top: 2px;
+    box-shadow: 0 0 0 5px var(--warm-beige);
 }
 
 .b-step {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    min-height: 240px;
+    position: relative;
+    margin-bottom: 35px;
+    padding: 0;
     text-align: left;
-    transition: transform 0.2s ease;
 }
 
-.b-step:hover {
-    transform: translateY(-3px);
-}
-
-@media (max-width: 1200px) {
-    .booking-steps {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
-    }
-}
-
-@media (max-width: 900px) {
-    .booking-steps {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 220px));
-    }
+.b-step:last-child {
+    margin-bottom: 0;
 }
 
 .b-num {
@@ -713,13 +692,13 @@ button, .btn-main, .btn-secondary {
 }
 
 .b-text h6 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .b-text p {
-    font-size: 0.88rem;
+    font-size: 0.98rem;
     color: var(--text-muted);
 }
 
@@ -733,11 +712,14 @@ button, .btn-main, .btn-secondary {
     margin-top: 35px;
     border: 1px solid #EAECE9;
     border-radius: 14px;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .pricing-table {
     width: 100%;
+    min-width: 600px;
     border-collapse: collapse;
     text-align: left;
 }
@@ -774,6 +756,56 @@ button, .btn-main, .btn-secondary {
     font-weight: 700;
     font-size: 1.15rem;
     color: var(--sage-green);
+}
+
+@media (max-width: 600px) {
+    .table-wrapper {
+        margin-right: 0;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .pricing-table {
+        min-width: 0;
+        table-layout: fixed;
+    }
+
+    .pricing-table th:nth-child(1),
+    .pricing-table td:nth-child(1) {
+        width: 58%;
+    }
+
+    .pricing-table th:nth-child(2),
+    .pricing-table td:nth-child(2) {
+        width: 18%;
+    }
+
+    .pricing-table th:nth-child(3),
+    .pricing-table td:nth-child(3) {
+        width: 24%;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+        padding: 14px 8px;
+        overflow-wrap: anywhere;
+    }
+
+    .pricing-table th {
+        font-size: 0.7rem;
+    }
+
+    .pricing-table td {
+        font-size: 0.76rem;
+    }
+
+    .table-desc {
+        font-size: 0.7rem;
+    }
+
+    .price-cell {
+        font-size: 0.95rem;
+    }
 }
 
 /* FOOTER */
