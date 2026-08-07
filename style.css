@@ -724,6 +724,21 @@ button, .btn-main, .btn-secondary {
     text-align: left;
 }
 
+.pricing-table th:nth-child(1),
+.pricing-table td:nth-child(1) {
+    width: 60%;
+}
+
+.pricing-table th:nth-child(2),
+.pricing-table td:nth-child(2) {
+    width: 20%;
+}
+
+.pricing-table th:nth-child(3),
+.pricing-table td:nth-child(3) {
+    width: 20%;
+}
+
 .pricing-table th, .pricing-table td {
     padding: 20px 24px;
 }
@@ -797,6 +812,13 @@ button, .btn-main, .btn-secondary {
         padding: 0;
         border: 0;
         overflow-wrap: anywhere;
+        white-space: normal;
+    }
+
+    .pricing-table td:nth-child(1),
+    .pricing-table td:nth-child(2),
+    .pricing-table td:nth-child(3) {
+        width: auto;
     }
 
     .pricing-table td:first-child {
