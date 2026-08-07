@@ -773,7 +773,7 @@ button, .btn-main, .btn-secondary {
     color: var(--sage-green);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .table-wrapper {
         margin-right: 0;
         border: 0;
