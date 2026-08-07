@@ -1,4 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobilne menu wysuwane z lewej strony
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuCloseButtons = document.querySelectorAll('[data-menu-close]');
+
+    const setMenuState = (isOpen) => {
+        document.body.classList.toggle('menu-open', isOpen);
+        if (menuToggle) {
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
+        }
+        if (mobileMenu) mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+    };
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => setMenuState(true));
+        menuCloseButtons.forEach(button => button.addEventListener('click', () => setMenuState(false)));
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMenuState(false));
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') setMenuState(false);
+        });
+    }
     
     // Płynne przewijanie (Smooth Scroll) tylko dla poprawnych linków hash
     const links = document.querySelectorAll('.nav-links a[href^="#"], .hero-buttons a[href^="#"], .logo-link[href^="#"]');

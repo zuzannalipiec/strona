@@ -96,6 +96,12 @@ section h3,
     border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
+.mobile-menu-toggle,
+.mobile-menu,
+.mobile-menu-overlay {
+    display: none;
+}
+
 a.logo-link {
     display: inline-flex;
     flex-direction: column;
@@ -852,14 +858,103 @@ a[href*="instagram.com"]:hover {
 /* MEDIA QUERIES (RESPONSYWNOŚĆ) */
 @media (max-width: 900px) {
     .navbar {
-        flex-direction: column;
-        gap: 15px;
+        min-height: 74px;
+        padding: 14px 5%;
+        flex-direction: row;
+        gap: 12px;
     }
     .nav-links {
+        display: none;
+    }
+    .navbar .btn-cta {
+        margin-left: auto;
+        padding: 9px 14px;
+        font-size: 0.72rem;
+    }
+    .mobile-menu-toggle {
         display: flex;
-        flex-wrap: wrap;
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        padding: 9px;
+        border: 1px solid #E1E5E0;
+        border-radius: 10px;
+        background: var(--white);
+        flex-direction: column;
         justify-content: center;
-        gap: 10px;
+        gap: 5px;
+        order: 3;
+    }
+    .mobile-menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 0 auto;
+        border-radius: 2px;
+        background: var(--text-dark);
+    }
+    .mobile-menu-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1100;
+        background: rgba(42, 50, 41, 0.42);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        display: block;
+    }
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        z-index: 1200;
+        top: 0;
+        left: 0;
+        width: min(84vw, 340px);
+        height: 100dvh;
+        padding: 78px 28px 32px;
+        background: var(--white);
+        box-shadow: 12px 0 35px rgba(42, 50, 41, 0.16);
+        transform: translateX(-105%);
+        transition: transform 0.3s ease;
+        visibility: hidden;
+    }
+    body.menu-open {
+        overflow: hidden;
+    }
+    body.menu-open .mobile-menu {
+        transform: translateX(0);
+        visibility: visible;
+    }
+    body.menu-open .mobile-menu-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .mobile-menu-close {
+        position: absolute;
+        top: 20px;
+        right: 22px;
+        border: 0;
+        background: transparent;
+        color: var(--text-dark);
+        font-size: 2rem;
+        line-height: 1;
+        padding: 4px 8px;
+    }
+    .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .mobile-nav-links a {
+        padding: 15px 0;
+        border-bottom: 1px solid #EAECE9;
+        color: var(--text-dark);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    .mobile-nav-links a:hover {
+        color: var(--sage-green);
     }
     .hero-container {
         flex-direction: column;

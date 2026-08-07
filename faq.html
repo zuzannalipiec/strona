@@ -25,10 +25,28 @@
             <a href="index.html#cennik">CENNIK</a>
             <a href="faq.html">FAQ</a>
         </nav>
+        <button class="mobile-menu-toggle" type="button" aria-label="Otwórz menu" aria-controls="mobile-menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <button class="btn-cta alert-trigger" data-message="Napisz wiadomość na profilu @lek.zuzanna.lipiec lub wyślij e-mail, aby ustalić termin wizyty!">
             UMÓW WIZYTĘ
         </button>
     </header>
+
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-label="Menu mobilne" aria-hidden="true">
+        <button class="mobile-menu-close" type="button" aria-label="Zamknij menu" data-menu-close>&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="index.html#o-mnie">O MNIE</a>
+            <a href="index.html#pierwsza-wizyta">PIERWSZA WIZYTA</a>
+            <a href="index.html#wizyty-kontrolne">OPIEKA KONTROLNA</a>
+            <a href="index.html#jak-sie-umowic">JAK SIĘ UMÓWIĆ</a>
+            <a href="index.html#cennik">CENNIK</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </aside>
 
     <main class="faq-page">
         <section class="faq section-header container-narrow">
