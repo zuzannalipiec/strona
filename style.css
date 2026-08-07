@@ -391,7 +391,11 @@ button, .btn-main, .btn-secondary {
 }
 
 .faq-page {
-    padding-top: 60px;
+    padding: 90px 5%;
+}
+
+.faq {
+    width: 100%;
 }
 
 .faq-list {
@@ -445,6 +449,38 @@ button, .btn-main, .btn-secondary {
 .faq-item.open .faq-answer {
     max-height: 1200px;
     padding: 18px 24px 24px;
+}
+
+@media (max-width: 900px) {
+    .faq-page {
+        padding: 70px 5%;
+    }
+
+    .faq-list {
+        gap: 16px;
+        margin-top: 36px;
+    }
+
+    .faq-question {
+        padding: 20px 18px;
+        font-size: 0.9rem;
+        gap: 14px;
+    }
+
+    .faq-question::after {
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+    }
+
+    .faq-answer {
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: 0.9rem;
+    }
+
+    .faq-item.open .faq-answer {
+        padding: 16px 18px 20px;
+    }
 }
 
 .faq-answer p,
