@@ -400,8 +400,8 @@ button, .btn-main, .btn-secondary {
 
 .faq-list {
     display: grid;
-    gap: 24px;
-    margin-top: 56px;
+    gap: 35px;
+    margin-top: 40px;
 }
 
 .faq-item {
@@ -453,12 +453,12 @@ button, .btn-main, .btn-secondary {
 
 @media (max-width: 900px) {
     .faq-page {
-        padding: 70px 5%;
+        padding: 90px 5%;
     }
 
     .faq-list {
-        gap: 16px;
-        margin-top: 36px;
+        gap: 35px;
+        margin-top: 40px;
     }
 
     .faq-question {
